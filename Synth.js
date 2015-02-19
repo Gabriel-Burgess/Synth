@@ -77,7 +77,7 @@ var playSound = function()
     var source = audioCtx.createBufferSource();
     source.buffer = arrayBuffer;
     source.connect(audioCtx.destination);
-    source.start;
+    source.start();
     console.log(source.start);
 }
 
