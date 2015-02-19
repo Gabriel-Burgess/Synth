@@ -6,7 +6,7 @@ var duration = 2; //Duration of sound in seconds.
 var frameCount = audioCtx.sampleRate * duration; //Will create enough frames for two seconds.
 var arrayBuffer = audioCtx.createBuffer(1, frameCount, audioCtx.sampleRate);
 
-var frequency = 1; //Number of oscillations per second.
+var frequency = 550; //Number of oscillations per second.
 var peakAmplitude = 1; //Some number between -1 and 1.
 var t = 0; //time
 var phase = 0;
