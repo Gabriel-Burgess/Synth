@@ -1,3 +1,4 @@
+//Implemented by Gabriel Burgess
 //I read through the mozilla documentation and combined the lessons learned there with
 //the equation for a sine wave.
 var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -13,6 +14,9 @@ var sampleRate = audioCtx.sampleRate;
 var y = 0; //the current value of amplitude at time t.
 
 var isReady = false; //Determines whether playSound() can be executed.
+
+var button = document.querySelector('button');
+console.log(button);
 
 //Returns the current amplitude at time t.
 var currentAmplitude = function(time, phaseArg)
@@ -66,13 +70,21 @@ var populateBuffer = function()
 
 var playSound = function()
 {
-    if(isReady)
-    {
-        //Creates and AudioBufferSourceNode and plays it.
-        var source = audioCtx.createBufferSource();
-        source.buffer = arrayBuffer;
-        source.connect(audioCtx.destination);
-        source.start;
-    }   
+    //Creates and AudioBufferSourceNode and plays it.
+    var source = audioCtx.createBufferSource();
+    source.buffer = arrayBuffer;
+    source.connect(audioCtx.destination);
+    source.start;
+    console.log(source.start);
 }
 
+button.onclick = function()
+{
+    console.log("Pressed button");
+    populateBuffer();
+    if(isReady)
+    {
+        console.log("isReady is true");
+        playSound();
+    }
+}
