@@ -33,6 +33,7 @@ var getPhase = function()
     {
         phase = phase - (2 * Math.PI);
     }
+    console.log("Phase: " + phase);
     return phase;
 }
 
@@ -50,6 +51,7 @@ var populateBufferWithArgs = function(freq, peakAmp)
         t += (1 / sampleRate); //Placed here so t starts at 0.
     }
     t = 0; //Reset t so it starts at 0 next time is executed.
+    phase = 0;
     isReady = true; //playSound() can now execute.
 }
 
@@ -65,6 +67,7 @@ var populateBuffer = function()
         t += (1 / sampleRate); //Placed here so t starts at 0.
     }
     t = 0; //Reset t so it starts at 0 next time is executed.
+    phase = 0;
     isReady = true; //playSound() can now execute.
 }
 
